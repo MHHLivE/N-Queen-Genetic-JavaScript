@@ -1,0 +1,52 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css'/>
+    <title>N Queen - Genetic</title>
+    <style>
+        body{padding-top: 30px;}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form id="gen-info">
+            <div class="card">
+                <div class="card-header"><h2>Genetic Algorithm</h2></div>
+                <div class="card-body">
+                    <!-- <div class="card-title"><strong>N Queens :</strong></div> -->
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label for="queens">Enter Queens Number : </label>
+                            <input class="form-control" id="queens" name="queens" type="number" placeholder="queens number..." required><br>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="population">Enter Genetic Algorithm Population : </label>
+                            <input class="form-control" id="population" name="population" type="number" placeholder="population..." required><br>
+                        </div>
+                    </div>
+                    <!-- <br> -->
+                    <input class="btn btn-outline-primary" type="submit" value="Start Genetic Algorithm">
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
+    <script src="/index.js"></script>
+    <script>
+        $form = $("#gen-info");
+        $queens = $("#queens");
+        $population = $("#population");
+
+        $(document).ready(function() {
+            $form.submit((e) => {
+                e.preventDefault();
+                console.log("clicked!");
+                var test = new Genetic($population.val(), $queens.val());
+            });            
+        });
+    </script>
+</body>
+</html>
