@@ -6,7 +6,7 @@ class Chess {
         this.score = null;
         this.shuffle();
         this.eval();
-        // console.log(this.toString());
+        console.log(this.toString());
     }
 
     shuffle(){
@@ -237,9 +237,32 @@ function deepClone(obj) {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 $(document).ready(function(){
 //     console.log("first chess :");
-    // let testChess = new Chess(5);
+    let testChess = new Chess(5);
 //     testChess.queensPlace = [0, 2, 4, 1, 3];
 //     testChess.eval();
 //     console.log(testChess.score, testChess.isGoal());
