@@ -43,7 +43,7 @@
         $(document).ready(function() {
             $form.submit((e) => {
                 e.preventDefault();
-                console.log("clicked!");
+                console.log(`Generic Started with ${$population.val()} of chesses that have ${$queens.val()} queens!`);
                 var test = new Genetic($population.val(), $queens.val());
             });            
         });

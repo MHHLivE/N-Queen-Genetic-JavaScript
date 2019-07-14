@@ -1,8 +1,8 @@
+// jshint esversion:6
 class Chess {
     constructor(queens){
-        // super();
         this.queens = queens;
-        this.queensPlace = []
+        this.queensPlace = [];
         this.score = null;
         this.shuffle();
         this.eval();
@@ -10,14 +10,10 @@ class Chess {
     }
 
     shuffle(){
-        // console.log("shuffle !");
         for(var index = 0; index < this.queens; index++){
             this.queensPlace.push(index);
-            // console.log(index);
         }
         this.queensPlace.sort(() => Math.random() - 0.5);
-
-        // console.log(this.queensPlace);
     }
 
     eval(){
@@ -122,7 +118,7 @@ class Genetic {
             roundRun : 0,
             finalAnswer : null,
             isFound : false
-        }
+        };
         // console.log(this.chesses);
         this.searchStart();
     }
@@ -156,7 +152,7 @@ class Genetic {
                     roundRun: this.geneticState.roundRun,
                     finalAnswer: this.chesses[chess],
                     isFound: true
-                }
+                };
                 break;
             }
         }
@@ -224,80 +220,13 @@ class Genetic {
 
 function deepClone(obj) {
     if (obj === null || typeof obj !== "object")
-      return obj
-    var props = Object.getOwnPropertyDescriptors(obj)
+      return obj;
+    var props = Object.getOwnPropertyDescriptors(obj);
     for (var prop in props) {
-      props[prop].value = deepClone(props[prop].value)
+      props[prop].value = deepClone(props[prop].value);
     }
     return Object.create(
       Object.getPrototypeOf(obj), 
       props
-    )
+    );
   }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-$(document).ready(function(){
-//     console.log("first chess :");
-    let testChess = new Chess(5);
-//     testChess.queensPlace = [0, 2, 4, 1, 3];
-//     testChess.eval();
-//     console.log(testChess.score, testChess.isGoal());
-    // let test2Chess = testChess;
-    // console.log("first chess :");
-    // testChess = new Chess(10);
-    // console.log("sec chess :");
-    // console.log(test2Chess.toString());
-//     console.log("genetic start :");
-    // let testGeneric = new Genetic(10, 5);
-    // console.log(testGeneric.chesses);
-    // testGeneric.mutation(20);
-    // testGeneric.mutation(20);
-    // testGeneric.mutation(20);
-    // testGeneric.mutation(20);
-    // testGeneric.mutation(20);
-    // testGeneric.mutation(20);
-    // testGeneric.mutation(20);
-    // testGeneric.mutation(20);
-    // testGeneric.mutation(20);
-    // testGeneric.mutation(20);
-    // testGeneric.mutation(20);
-    // let test2Generic = Object.assign( Object.create( Object.getPrototypeOf(testGeneric)), testGeneric);
-    // let test2Generic = deepClone(testGeneric);
-    // testGeneric.chesses.sort((a, b) => {
-    //     return (a.score - b.score); 
-    // });
-
-    // console.log("first one sorted !");
-    // for(let chess in testGeneric.chesses){
-    //     console.log(testGeneric.chesses[chess].toString());
-    // }
-    // console.log("second one unsorted !");
-    // for(let chess in test2Generic.chesses){
-    //     console.log(test2Generic.chesses[chess].toString());
-    // }
-});
-
